@@ -20,6 +20,9 @@
 		7FCB023328D12E3300170919 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FCB023128D12E3300170919 /* LaunchScreen.storyboard */; };
 		7FCB023E28D1343900170919 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB023D28D1343900170919 /* SearchVC.swift */; };
 		7FCB024028D1346500170919 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB023F28D1346500170919 /* FavoritesVC.swift */; };
+		7FEE742D28D5E01400C43D58 /* NetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE742C28D5E01400C43D58 /* NetworkManger.swift */; };
+		7FEE742F28D5E30000C43D58 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE742E28D5E30000C43D58 /* Follower.swift */; };
+		7FEE743228D5E4EC00C43D58 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE743128D5E4EC00C43D58 /* ErrorMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		7FCB023428D12E3300170919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FCB023D28D1343900170919 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		7FCB023F28D1346500170919 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		7FEE742C28D5E01400C43D58 /* NetworkManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManger.swift; sourceTree = "<group>"; };
+		7FEE742E28D5E30000C43D58 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		7FEE743128D5E4EC00C43D58 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 		7F03E5B128D4A18E0040C1AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7FEE742E28D5E30000C43D58 /* Follower.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,6 +115,8 @@
 		7FCB022528D12E3100170919 /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
+				7FEE743028D5E47100C43D58 /* Utilities */,
+				7FEE742B28D5DFF500C43D58 /* Managers */,
 				7F7D30C628D3F6DA0085426B /* Extentions */,
 				7F03E5B128D4A18E0040C1AE /* Model */,
 				7FA74A9628D281D40063B584 /* Views */,
@@ -126,6 +135,22 @@
 				7FA74A9B28D293700063B584 /* FollowerListVC.swift */,
 			);
 			path = VCs;
+			sourceTree = "<group>";
+		};
+		7FEE742B28D5DFF500C43D58 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7FEE742C28D5E01400C43D58 /* NetworkManger.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		7FEE743028D5E47100C43D58 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7FEE743128D5E4EC00C43D58 /* ErrorMessage.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +229,9 @@
 				7FA74A9828D281EE0063B584 /* GFButton.swift in Sources */,
 				7FCB023E28D1343900170919 /* SearchVC.swift in Sources */,
 				7F41D2A328D3CF9B00180695 /* GFAlertVC.swift in Sources */,
+				7FEE742D28D5E01400C43D58 /* NetworkManger.swift in Sources */,
+				7FEE742F28D5E30000C43D58 /* Follower.swift in Sources */,
+				7FEE743228D5E4EC00C43D58 /* ErrorMessage.swift in Sources */,
 				7F41D2A128D3CEE300180695 /* GFBodyLabel.swift in Sources */,
 				7FA74A9E28D2A10F0063B584 /* GFTitleLabel.swift in Sources */,
 				7FA74A9C28D293700063B584 /* FollowerListVC.swift in Sources */,
