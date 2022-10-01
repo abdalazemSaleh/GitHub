@@ -39,7 +39,7 @@ class GFUserInfoHeaderVC: UIViewController {
     
     // MARK: - Configure functions
     func configureUIElements() {
-        avatarImageView.downloadImage(from: user.avatarUrl)
+        downloadAvatarImage()
         usernameLabel.text              = user.login
         nameLabel.text                  = user.name ?? "No available name"
         locationLabel.text              = user.location ?? "No available location"
@@ -50,7 +50,15 @@ class GFUserInfoHeaderVC: UIViewController {
         locationImageView.tintColor     = .secondaryLabel
     }
     
+    
     // MARK: - Functions
+    func downloadAvatarImage() {
+        NetworkManger.share.downloadImage(from: user.avatarUrl) { [weak self] image in
+            guard let self = self else { return }
+            DispatchQueue.main.async { self.avatarImageView.image = image }
+        }
+    }
+
     func addSubviews() {
         view.addSubview(avatarImageView)
         view.addSubview(usernameLabel)

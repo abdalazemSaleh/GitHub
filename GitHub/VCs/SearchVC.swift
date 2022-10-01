@@ -13,6 +13,7 @@ class SearchVC: UIViewController {
     let logoImageView = UIImageView()
     let userNameTF = GFTextField()
     let searchButton = GFButton(backgroundColor:  .systemGreen, title: "Get Followers")
+    var logoImageViewTopConstraint: NSLayoutConstraint!
     
     var isUserNameEnterd: Bool { return !userNameTF.text!.isEmpty }
     
@@ -29,13 +30,14 @@ class SearchVC: UIViewController {
     // MARK: - View willAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        userNameTF.text = ""
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     // MARK: - Functions
     /// Create dismiss keyboard tap gesture
     func createDismissKeyBoardTapGesture() {
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
     }
     
@@ -45,9 +47,10 @@ class SearchVC: UIViewController {
             presentGFAlert(title: "Empty Username", message: "Please enter Username. We need to know who to look for 😄.", buttonTitle: "OK")
             return
         }
-        let vc = FollowerListVC()
-        vc.userName = userNameTF.text
-        vc.title = userNameTF.text
+        
+        userNameTF.resignFirstResponder()
+        
+        let vc = FollowerListVC(username: userNameTF.text!)
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -55,14 +58,13 @@ class SearchVC: UIViewController {
     func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "gh-logo")!
+        logoImageView.image = Images.ghLogo
         
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.heightAnchor.constraint(equalToConstant: 200),
             logoImageView.widthAnchor.constraint(equalToConstant: 200)
-            
         ])
     }
     
